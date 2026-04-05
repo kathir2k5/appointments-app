@@ -30,24 +30,30 @@ class Appointments extends Component {
 
   onAddAppointment = event => {
     event.preventDefault()
-    const {titleInput, dateInput} = this.state
-
-    if (titleInput === '' || dateInput === '') return
-
-    const formattedDate = format(new Date(dateInput), 'dd MMMM yyyy, EEEE')
-
+    const {title, date} = this.state
+  
+    if (title === '' || date === '') return
+  
     const newAppointment = {
       id: uuidv4(),
-      title: titleInput,
-      date: formattedDate,
+      title,
+      date,
       isStarred: false,
     }
-
-    this.setState(prevState => ({
-      appointmentsList: [...prevState.appointmentsList, newAppointment],
-      titleInput: '',
-      dateInput: '',
-    }))
+  
+    this.setState(
+      prev => ({
+        appointmentsList: [...prev.appointmentsList, newAppointment],
+        title: '',
+        date: '',
+      }),
+      () => {
+        localStorage.setItem(
+          'appointments',
+          JSON.stringify(this.state.appointmentsList),
+        )
+      },
+    )
   }
 
   toggleStar = id => {
