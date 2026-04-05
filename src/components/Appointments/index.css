@@ -1,0 +1,91 @@
+.app-container {
+  background: linear-gradient(to bottom, #fbc7d4, #9796f0);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointments-card {
+  background-color: #ffffff;
+  width: 85%;
+  max-width: 900px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+  width: 60%;
+}
+
+.heading {
+  font-size: 20px;
+  color: #171f46;
+  margin-bottom: 15px;
+}
+
+.label {
+  font-size: 12px;
+  color: #b5b7c4;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #b5b7c4;
+  border-radius: 4px;
+}
+
+.add-btn {
+  background-color: #8b5cf6;
+  color: #ffffff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.image {
+  width: 250px;
+}
+
+.line {
+  margin: 20px 0;
+  border: 1px solid #b5b7c4;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.starred-btn {
+  border: 1px solid #9897f0;
+  background-color: transparent;
+  color: #9897f0;
+  padding: 5px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.starred-btn.active {
+  background-color: #9897f0;
+  color: #ffffff;
+}
+
+.appointments-list {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
