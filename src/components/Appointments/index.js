@@ -13,6 +13,13 @@ class Appointments extends Component {
     isFilterActive: false,
   }
 
+  componentDidMount() {
+  const storedList = localStorage.getItem('appointments')
+  if (storedList !== null) {
+    this.setState({appointmentsList: JSON.parse(storedList)})
+  }
+}
+
   onChangeTitle = event => {
     this.setState({titleInput: event.target.value})
   }
